@@ -28,6 +28,7 @@ var mychoice;
     document.getElementById("rock").onclick = function(){
      mychoice = 0;
      resetResult();
+     playSound(mychoice);
      getMyChoice();
      getRandomChoice();
      compareResults();
@@ -36,6 +37,7 @@ var mychoice;
     document.getElementById("paper").onclick = function(){
     mychoice = 1;
     resetResult();
+    playSound(mychoice);
       getMyChoice();
       getRandomChoice();
       compareResults();
@@ -44,6 +46,7 @@ var mychoice;
     document.getElementById("scissors").onclick = function(){
     mychoice = 2;
     resetResult();
+    playSound(mychoice);
       getMyChoice();
       getRandomChoice();
       compareResults();
@@ -127,4 +130,8 @@ function resetResult(){
     document.getElementById("result").style.color = "black";
     document.querySelector("#computerchoice img").classList.remove("winner");
     document.querySelector("#yourchoice img").classList.remove("winner");
+}
+function playSound(choice){
+    let sound = new Audio("./public/"+choice+".mp3");
+    sound.play()
 }
