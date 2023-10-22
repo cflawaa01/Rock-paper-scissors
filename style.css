@@ -28,8 +28,8 @@ button{
     border-radius: 23px;
     width: 150px;
     height: 40px;
-    background: radial-gradient(50px, rgba(0, 226, 8, 0.815), rgba(6, 81, 14, 0.581));
-    border-color: rgb(65, 255, 48);
+    background: radial-gradient(50px, rgba(180, 255, 170, 0.88), rgba(28, 220, 47, 0.581));
+    border-color: rgb(0, 255, 68);
     color: rgb(0, 0, 0);
     font-family: 'Space Grotesk', sans-serif;
     font-size: x-large;
@@ -38,4 +38,15 @@ button{
     margin: 80px;
     display: flex;
     justify-content:space-around;
+}
+button:hover{
+    background-color:rgb(255, 255, 255) ;
+    color: rgb(206, 0, 0);
+    box-shadow: 10px 5px 25px rgba(166, 255, 33, 0.396);
+}
+.winner{
+    box-shadow: 0px 0px 20px rgba(68, 255, 0, 0.994);
+    border-radius: 200px;
+    background-color: rgba(240, 248, 255, 0.718);
+    
 }

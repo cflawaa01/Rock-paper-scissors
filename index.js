@@ -27,21 +27,27 @@ function getRandomChoice(){
 var mychoice;
     document.getElementById("rock").onclick = function(){
      mychoice = 0;
+     resetResult();
      getMyChoice();
      getRandomChoice();
      compareResults();
+     
     };
     document.getElementById("paper").onclick = function(){
     mychoice = 1;
+    resetResult();
       getMyChoice();
       getRandomChoice();
       compareResults();
+      
     };
     document.getElementById("scissors").onclick = function(){
     mychoice = 2;
+    resetResult();
       getMyChoice();
       getRandomChoice();
       compareResults();
+      
     };
 function getMyChoice(){
     switch (mychoice) {
@@ -67,10 +73,14 @@ function compareResults(){
     switch (mychoice) {
         case 0:
             if(computerchoice == 1){
-                document.getElementById("result").innerHTML = "No luck. The computer won."
+                document.getElementById("result").innerHTML = "No luck. The computer won.";
+                document.querySelector("#computerchoice img").classList.add("winner");
+                document.getElementById("result").style.color = "red";
             }
             else if(computerchoice == 2){
-                document.getElementById("result").innerHTML = "Congrates! You won!!"
+                document.getElementById("result").innerHTML = "Congrates! You won!!";
+                document.querySelector("#yourchoice img").classList.add("winner");
+                document.getElementById("result").style.color = "white";
             }
             else{
                 document.getElementById("result").innerHTML = "Draw."
@@ -78,10 +88,14 @@ function compareResults(){
             break;
             case 1:
                 if(computerchoice == 2){
-                    document.getElementById("result").innerHTML = "No luck. The computer won."
+                    document.getElementById("result").innerHTML = "No luck. The computer won.";
+                    document.querySelector("#computerchoice img").classList.add("winner");
+                    document.getElementById("result").style.color = "red";
                 }
                 else if(computerchoice == 0){
-                    document.getElementById("result").innerHTML = "Congrates! You won!!"
+                    document.getElementById("result").innerHTML = "Congrates! You won!!";
+                    document.querySelector("#yourchoice img").classList.add("winner");
+                    document.getElementById("result").style.color = "white";
                 }
                 else{
                     document.getElementById("result").innerHTML = "Draw."
@@ -89,10 +103,14 @@ function compareResults(){
             break;
             case 2:
             if(computerchoice == 0){
-                document.getElementById("result").innerHTML = "No luck. The computer won."
+                document.getElementById("result").innerHTML = "No luck. The computer won.";
+                document.querySelector("#computerchoice img").classList.add("winner");
+                document.getElementById("result").style.color = "red";
             }
             else if(computerchoice == 1){
-                document.getElementById("result").innerHTML = "Congrates! You won!!"
+                document.getElementById("result").innerHTML = "Congrates! You won!!";
+                document.querySelector("#yourchoice img").classList.add("winner");
+                document.getElementById("result").style.color = "white";
             }
             else{
                 document.getElementById("result").innerHTML = "Draw."
@@ -103,4 +121,10 @@ function compareResults(){
             break;
     }
 
+}
+
+function resetResult(){
+    document.getElementById("result").style.color = "black";
+    document.querySelector("#computerchoice img").classList.remove("winner");
+    document.querySelector("#yourchoice img").classList.remove("winner");
 }
